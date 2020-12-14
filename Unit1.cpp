@@ -20,7 +20,7 @@ int main()
 {
 
 
-        int nValue, mValue, isRandom, tmpArrSize, counter = 0;
+        int nValue, mValue, userChoice, tmpArrSize, counter = 0;
 
 
 
@@ -49,9 +49,9 @@ int main()
         }
 
         printf("Enter 1 to fill array using keyboard and 2 for random\n");
-        scanf("%d", &isRandom);
+        scanf("%d", &userChoice);
 
-        switch(isRandom)
+        switch(userChoice)
         {
             case 1:
                 fillArrKeyboard(arr, nValue, mValue);

@@ -133,7 +133,7 @@ void fillArrKeyboard(int *arr[], int nSize, int mSize)
 void fillArrRandomly(int *arr[], int nSize, int mSize)
 {
 
-    int forRandomCorrection = -25
+    int forRandomCorrection = -25;
     for(int i = 0; i < nSize; i++)
     {
         for(int j = 0; j < mSize; j++)

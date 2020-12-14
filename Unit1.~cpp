@@ -15,13 +15,13 @@ void fillArrKeyboard(int *arr[], int nSize, int mSize);
 void fillArrRandomly(int *arr[], int nSize, int mSize);
 bool alreadyExist(int arr[], int arrSize, int value);
 
-const int maxMatrixSize = 7;
-int main(int argc, char* argv[])
+const int MAX_MATRIX_SIZE = 7;
+int main()
 {
 
 
         int nValue, mValue, isRandom, tmpArrSize, counter = 0;
-        
+
 
 
         printf("Enter matrix size N x M\n");
@@ -32,12 +32,12 @@ int main(int argc, char* argv[])
             printf("N and M should be more than 0. Enter again");
             scanf("%d %d", nValue, mValue);
         }
-        while(nValue > maxMatrixSize || mValue > maxMatrixSize)
+        while(nValue > MAX_MATRIX_SIZE || mValue > MAX_MATRIX_SIZE)
         {
             printf("\nmaximum size is 7 x 7\n");
 
-            nValue =  maxMatrixSize;
-            mValue =  maxMatrixSize;
+            nValue =  MAX_MATRIX_SIZE;
+            mValue =  MAX_MATRIX_SIZE;
 
         }
 
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
             arr[i] = new int[mValue];
         }
 
-        printf("press 1 to fill array using keyboard and 2 for random\n");
+        printf("Enter 1 to fill array using keyboard and 2 for random\n");
         scanf("%d", &isRandom);
 
         switch(isRandom)
@@ -76,9 +76,11 @@ int main(int argc, char* argv[])
         tmpArrSize =  (nValue) * (mValue);
         int *tmpArr = new int[tmpArrSize];
 
+
+        int magicNumber = -99999;
          for(int j = 0; j < mValue; j++)
          {
-                tmpArr[j] = -99999;
+                tmpArr[j] = magicNumber;
          }
 
 
@@ -130,11 +132,13 @@ void fillArrKeyboard(int *arr[], int nSize, int mSize)
 
 void fillArrRandomly(int *arr[], int nSize, int mSize)
 {
+
+    int forRandomCorrection = -25
     for(int i = 0; i < nSize; i++)
     {
         for(int j = 0; j < mSize; j++)
         {
-            arr[i][j] = random(50) - 25;
+            arr[i][j] = random(50) + forRandomCorrection;
         }
     }
 }
@@ -148,10 +152,6 @@ bool alreadyExist(int arr[], int arrSize, int value)
             if(arr[i] == value)
             {
                 return true;
-            }
-            else
-            {
-                continue;
             }
        }
        

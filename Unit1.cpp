@@ -66,18 +66,19 @@ int main()
                 printf("%d  ", arr[i][j]);
             }
 
-        printf("\n");
+            printf("\n");
         }
+
         printf("\n\n");
 
         tmpArrSize =  (nValue) * (mValue);
         int *tmpArr = new int[tmpArrSize];
 
         int toInitialize = -99999;
-         for(int j = 0; j < mValue; j++)
-         {
-                tmpArr[j] = toInitialize;
-         }
+        for(int j = 0; j < mValue; j++)
+        {
+            tmpArr[j] = toInitialize;
+        }
 
 
 

@@ -19,10 +19,7 @@ const int MAX_MATRIX_SIZE = 7;
 int main()
 {
 
-
-        int nValue, mValue, isRandom, tmpArrSize, counter = 0;
-
-
+        int nValue, mValue, userChoice, tmpArrSize, counter = 0;
 
         printf("Enter matrix size N x M\n");
         scanf("%d %d", &nValue, &mValue);
@@ -49,9 +46,9 @@ int main()
         }
 
         printf("Enter 1 to fill array using keyboard and 2 for random\n");
-        scanf("%d", &isRandom);
+        scanf("%d", &userChoice);
 
-        switch(isRandom)
+        switch(userChoice)
         {
             case 1:
                 fillArrKeyboard(arr, nValue, mValue);
@@ -76,11 +73,10 @@ int main()
         tmpArrSize =  (nValue) * (mValue);
         int *tmpArr = new int[tmpArrSize];
 
-
-        int magicNumber = -99999;
+        int toInitialize = -99999;
          for(int j = 0; j < mValue; j++)
          {
-                tmpArr[j] = magicNumber;
+                tmpArr[j] = toInitialize;
          }
 
 
@@ -133,12 +129,13 @@ void fillArrKeyboard(int *arr[], int nSize, int mSize)
 void fillArrRandomly(int *arr[], int nSize, int mSize)
 {
 
-    int forRandomCorrection = -25;
+    const int forRandomCorrection = -25,
+    forRandom = 50;
     for(int i = 0; i < nSize; i++)
     {
         for(int j = 0; j < mSize; j++)
         {
-            arr[i][j] = random(50) + forRandomCorrection;
+            arr[i][j] = random(forRandom) + forRandomCorrection;
         }
     }
 }
@@ -146,7 +143,6 @@ void fillArrRandomly(int *arr[], int nSize, int mSize)
 
 bool alreadyExist(int arr[], int arrSize, int value)
 {
-
        for(int i = 0; i < arrSize; i++)
        {
             if(arr[i] == value)
@@ -157,5 +153,5 @@ bool alreadyExist(int arr[], int arrSize, int value)
        
        return false;
 }
-//--arr[i] = random(20) - 10;-------------------------------------------------------------------------
+
 

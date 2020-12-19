@@ -26,14 +26,18 @@ int main()
         printf("Enter matrix size N x M\n");
         scanf("%d %d", &nValue, &mValue);
 
-        while (nValue < 0 ||
+        do
+        {
+            printf("Enter matrix size N x M\nN and M should be more than 0 and less than 7!");
+
+            scanf("%d %d", &nValue, &mValue);
+
+
+        } while (nValue < 0 ||
          mValue < 0 ||
          nValue > MAX_MATRIX_SIZE ||
          mValue > MAX_MATRIX_SIZE)
-        {
-            printf("N and M should be more than 0 and less than 7! Enter again\n");
-            scanf("%d %d", &nValue, &mValue);
-        }
+
 
         int **arr = new int*[nValue];
         for(int i = 0; i < nValue; i++)

@@ -28,8 +28,7 @@ int main()
 
         do
         {
-            printf("Enter matrix size N x M\n
-            N and M should be more than 0 and less than 7!");
+            printf("Enter matrix size N x M\nN and M should be more than 0 and less than 7!");
 
             scanf("%d %d", &nValue, &mValue);
 

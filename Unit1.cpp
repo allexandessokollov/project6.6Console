@@ -11,8 +11,8 @@
 #include <stdlib.h>
 
 const int MAX_MATRIX_SIZE = 7;
-int const MAX_RANDOM_VALUE = 25;
-int const MIN_RANDOM_VALUE = -25;
+int const MAX_RANDOM_VALUE = 100;
+int const MIN_RANDOM_VALUE = -100;
 
 void fillArrKeyboard(int *arr[], int nSize, int mSize);
 void fillArrRandomly(int *arr[], int nSize, int mSize);
@@ -20,10 +20,7 @@ bool alreadyExist(int arr[], int countOfElemToCheck, int value);
 
 int main()
 {
-
         int nValue, mValue, userChoice;
-
-
 
         do
         {
@@ -31,19 +28,16 @@ int main()
 
             scanf("%d %d", &nValue, &mValue);
 
-
         } while (nValue < 0 ||
          mValue < 0 ||
          nValue > MAX_MATRIX_SIZE ||
          mValue > MAX_MATRIX_SIZE);
-
 
         int **arr = new int*[nValue];
         for(int i = 0; i < nValue; i++)
         {
             arr[i] = new int[mValue];
         }
-
 
         printf("Enter 1 to fill array using keyboard and 2 for random\n");
         scanf("%d", &userChoice);
@@ -57,7 +51,6 @@ int main()
                 fillArrRandomly(arr, nValue, mValue);
                 break;
         }
-
 
         for(int i = 0; i < nValue; i++)
         {
@@ -73,13 +66,7 @@ int main()
 
         int tmpArrSize =  (nValue) * (mValue);
         int *tmpArr = new int[tmpArrSize];
-
-        int toInitialize = -99999;
-        for(int j = 0; j < mValue; j++)
-        {
-            tmpArr[j] = toInitialize;
-        }
-
+ 
         int counter = 0;
 
         for(int i = 0; i < nValue; i++)
@@ -100,13 +87,11 @@ int main()
             }
         }
 
-
         printf("\n\nanswer is: %d \n\n", counter);
-    
 
-        printf("\n\npress any int number to close");
-        int close;
-        scanf("%d", &close);
+        puts("\n\n\nPress any key ... ");
+        getch();
+        getch();
 
         for(int i = 0; i < mValue; i++)
         {
@@ -120,7 +105,6 @@ int main()
 
 void fillArrKeyboard(int *arr[], int nSize, int mSize)
 {
-
     for(int i = 0; i < nSize; i++)
     {
         for(int j = 0; j < mSize; j++)
@@ -132,10 +116,9 @@ void fillArrKeyboard(int *arr[], int nSize, int mSize)
 
 }
 
+
 void fillArrRandomly(int *arr[], int nSize, int mSize)
 {
-
-
     for(int i = 0; i < nSize; i++)
     {
         for(int j = 0; j < mSize; j++)
